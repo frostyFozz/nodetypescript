@@ -1,33 +1,30 @@
-import { Column, Entity, OneToOne } from 'typeorm';
-import { BaseEntity } from '../../config/base.entity'
-import { CustomerEntity } from '../../costumers/entities/customers.entity';
+import { Column, Entity, OneToOne } from "typeorm";
+import { BaseEntity } from "../../config/base.entity";
+import { CustomerEntity } from "../../costumers/entities/customer.entity";
 
-@Entity({name:"user"})
+@Entity({ name: "users" })
 export class UserEntity extends BaseEntity {
-    
+  @Column()
+  name!: string;
 
-    @Column()
-    name!: string;
+  @Column()
+  lastname!: string;
 
-    @Column()
-    lastname!: string;
+  @Column()
+  username!: string;
 
-    @Column()
-    username!: string;
+  @Column()
+  email!: string;
 
-    @Column()
-    email!: string;
+  @Column({ select: false })
+  password!: string;
 
-    @Column()
-    Password!: string;
+  @Column()
+  city!: string;
 
-    @Column()
-    city!: string;
+  @Column()
+  province!: string;
 
-    @Column()
-    Province!: number;
-
-    @OneToOne(()=> CustomerEntity, (customer) => customer.user)
-    customer!: CustomerEntity
-
+  @OneToOne(() => CustomerEntity, (customer) => customer.user)
+  customer!: CustomerEntity;
 }
