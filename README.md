@@ -1,14 +1,9 @@
 # nodetypescript
-Proyecto api NodeJS con TypeScript y TypeORM
-En este proyecto practique como generar una API REST compleja con NodeJS utilizando como lenguage core TypeScript y TypeORM como ORM SQL.
+NodeJS api project with TypeScript and TypeORM In this project I practice how to generate a complex REST API with NodeJS using TypeScript as core language and TypeORM as SQL ORM.
 
-Tecnologias a aplicar:
-POO.
-Docker Compose como base de datos.
-Configuracion de TypeScript.
-Configuracion de rutas, controladores, servicios y entidades.
-Lista de dependencias para instalacion:
-Dependencias necesarias:
+Technologies to apply: OOP. Docker Compose as a database. TypeScript configuration. Configuration of routes, controllers, services and entities. List of dependencies for installation: Required dependencies:
+
+npm install class-validator class-transformer cors dotenv express morgan mysql typeorm typeorm-naming-strategies typescript Required development dependencies:
 
 npm install class-validator class-transformer cors dotenv express morgan mysql typeorm typeorm-naming-strategies typescript
 Dependencias de desarrollo necesarias:
