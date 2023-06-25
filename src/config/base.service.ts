@@ -1,6 +1,6 @@
-import { EntityTarget, Repository } from "typeorm";
+import { EntityTarget, ObjectLiteral, Repository } from "typeorm";
 import { BaseEntity } from "./base.entity";
-import { ConfigServer } from "../config/config";
+import { ConfigServer } from "./config";
 
 export class BaseService<T extends BaseEntity> extends ConfigServer {
   public execRepository: Promise<Repository<T>>;
@@ -9,8 +9,8 @@ export class BaseService<T extends BaseEntity> extends ConfigServer {
     this.execRepository = this.initRepository(getEntity);
   }
 
-  async initRepository<T>(e: EntityTarget<T>): Promise <Repository<T>> {
-    const getConn = await this.dbConnect();
+  async initRepository<T extends ObjectLiteral>(e: EntityTarget<T>): Promise<Repository<T>> {
+    const getConn = await this.initConnect;
     return getConn.getRepository(e);
   }
 }

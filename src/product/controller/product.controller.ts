@@ -16,7 +16,7 @@ export class ProductController {
   async getProductById(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const data = await this.productService.findProductById(id);
+      const data = await this.productService.findCustomerById(id);
       res.status(200).json(data);
     } catch (e) {
       console.error(e);

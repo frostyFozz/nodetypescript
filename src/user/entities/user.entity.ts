@@ -1,6 +1,7 @@
 import { Column, Entity, OneToOne } from "typeorm";
 import { BaseEntity } from "../../config/base.entity";
 import { CustomerEntity } from "../../costumers/entities/customer.entity";
+import { RoleType } from "../dto/user.dto";
 
 @Entity({ name: "users" })
 export class UserEntity extends BaseEntity {
@@ -21,6 +22,9 @@ export class UserEntity extends BaseEntity {
 
   @Column()
   city!: string;
+
+  @Column({type:"enum" , enum: RoleType, nullable: false})
+  role!: RoleType;
 
   @Column()
   province!: string;

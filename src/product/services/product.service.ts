@@ -11,12 +11,9 @@ export class ProductService extends BaseService<ProductEntity> {
     return (await this.execRepository).find();
   }
   async findCustomerById(id: string): Promise<ProductEntity | null> {
-    return (await this.execRepository).findOne({
-      where: {
-        id: id
-      }
-    });
+    return (await this.execRepository).findOneBy({ id }) 
   }
+
   async createProduct(body: ProductDTO): Promise<ProductEntity> {
     return (await this.execRepository).save(body);
   }
